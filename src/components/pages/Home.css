@@ -1,0 +1,12 @@
+.main-showcase {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 5px 25px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
