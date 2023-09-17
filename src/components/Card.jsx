@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import './Card.css';
 
 function Card({ productName, description, price }) {
   const [amount, setAmount] = useState(0);
@@ -12,7 +13,7 @@ function Card({ productName, description, price }) {
   );
 }
 
-Card.PropTypes = {
+Card.propTypes = {
   productName: PropTypes.string,
   description: PropTypes.string,
   price: PropTypes.number,
