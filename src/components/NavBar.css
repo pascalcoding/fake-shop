@@ -1,0 +1,18 @@
+.nav-bar {
+  background-color: #3cb371;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.links > *:hover {
+  transform: scale(1.1);
+}
