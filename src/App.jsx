@@ -1,11 +1,13 @@
-import Shop from './components/Shop';
+import NavBar from './components/NavBar';
+import Home from './components/pages/Home';
 
-function App() {
+function Shop() {
   return (
     <>
-      <Shop />
+      <NavBar />
+      <Home />
     </>
   );
 }
 
-export default App;
+export default Shop;
