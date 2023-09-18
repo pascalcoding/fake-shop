@@ -1,5 +1,4 @@
 import './Home.css';
-import img from '../../assets/japanese-tea.jpg';
 
 function Home() {
   return (
@@ -7,12 +6,15 @@ function Home() {
       <main className="main-showcase">
         <div>
           <div>
-            <h2>Experience Japan Through Our Teas</h2>
+            <h2>Your Tech Haven - Elevate Your Electronics Experience</h2>
             <p>
-              Welcome to our world of Japanese tea excellence. Delve into the
-              traditions and flavors of Japan with us.
+              Welcome to <b>Fake Electronics Store</b> – your premier
+              electronics destination! We're your go-to source for cutting-edge
+              tech, offering everything from smartphones to gaming consoles. Our
+              commitment to top brands and superior service ensures you stay
+              connected and ahead in the world of electronics. Welcome to the
+              future of tech shopping; welcome to [Store Name]
             </p>
-            <img src={img} alt="" style={{ maxWidth: '350px' }} />
           </div>
           <div className="product-showcase"></div>
         </div>
