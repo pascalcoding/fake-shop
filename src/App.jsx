@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import Home from './components/pages/Home';
 
-function Shop() {
+function App() {
   return (
     <>
       <NavBar />
@@ -10,4 +10,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default App;
