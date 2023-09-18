@@ -8,9 +8,10 @@
 
 .links {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
 }
 
 .links > *:hover {
