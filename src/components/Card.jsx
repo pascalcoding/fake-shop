@@ -1,28 +1,27 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
-function Card({ productName, description, price }) {
+function Card({ product }) {
   const [amount, setAmount] = useState(0);
+
+  const handleClick = () => {};
+
   return (
-    <div className="card">
-      <h3>{productName}</h3>
-      <p>{description}</p>
-      <div>{price}</div>
-    </div>
+    <Link className="card" to={`/Shop/product/${product.id}`}>
+      <h3>{product.title}</h3>
+      <img
+        src={product.image}
+        style={{ maxWidth: '150px', maxHeight: '100px' }}
+      />
+      <div>{product.price} €</div>
+    </Link>
   );
 }
 
 Card.propTypes = {
-  productName: PropTypes.string,
-  description: PropTypes.string,
-  price: PropTypes.number,
-};
-
-Card.defaultProps = {
-  productName: 'Example',
-  description: 'Example Description',
-  price: 1.1,
+  product: PropTypes.object,
 };
 
 export default Card;
