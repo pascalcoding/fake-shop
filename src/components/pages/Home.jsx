@@ -7,7 +7,7 @@ function Home() {
         <div>
           <div>
             <h2>Your Tech Haven - Elevate Your Electronics Experience</h2>
-            <p>
+            <p data-testid="welcome-paragraph">
               Welcome to <b>Fake Electronics Shop</b> – your premier electronics
               destination! We're your go-to source for cutting-edge tech,
               offering everything from smartphones to gaming consoles. Our
