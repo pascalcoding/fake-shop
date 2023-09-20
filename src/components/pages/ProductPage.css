@@ -4,6 +4,13 @@
   padding: 15px 50px;
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+
 @media screen and (max-width: 720px) {
   .product-showcase {
     flex-direction: column;
