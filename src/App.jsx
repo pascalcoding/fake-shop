@@ -13,10 +13,11 @@ function App() {
   const [selectedProducts, setSelectedProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const reponse = await fetch(
-        'https://fakestoreapi.com/products/category/electronics'
+      const response = await fetch(
+        'https://fakestoreapi.com/products/category/electronics',
+        { mode: 'cors' }
       );
-      const data = await reponse.json();
+      const data = await response.json();
       setProdcuts(() => data);
       setLoading(() => false);
     };
