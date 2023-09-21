@@ -1,13 +1,8 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import './Card.css';
 import { Link } from 'react-router-dom';
 
 function Card({ product }) {
-  const [amount, setAmount] = useState(0);
-
-  const handleClick = () => {};
-
   return (
     <Link className="card" to={`/Shop/product/${product.id}`}>
       <h3>{product.title}</h3>
