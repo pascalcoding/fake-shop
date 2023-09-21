@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card component > Renders card correctly 1`] = `
+<div>
+  <a
+    class="card"
+    href="/Shop/product/1"
+  >
+    <h3>
+      Test Product 1
+    </h3>
+    <img
+      src=""
+      style="max-width: 150px; max-height: 100px;"
+    />
+    <div>
+      100
+       €
+    </div>
+  </a>
+</div>
+`;

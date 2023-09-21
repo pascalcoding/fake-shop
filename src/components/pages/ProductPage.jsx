@@ -31,7 +31,12 @@ function ProductPage({ products, selectedProducts, setSelectedProducts }) {
         <div>{product.price} €</div>
         <div>
           <label htmlFor="amount">Amount: </label>
-          <input type="number" name="amount" id="amount" />
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            data-testid="amount-input"
+          />
         </div>
         <button className="green-button" type="Button" onClick={handleClick}>
           Add to cart
