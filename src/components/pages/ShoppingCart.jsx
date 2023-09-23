@@ -9,28 +9,18 @@ function ShoppingCart({ selectedProducts, setSelectedProducts }) {
     0
   );
 
-  const handleChange = (e) => {
-    const id = Number(
-      e.target.parentElement.parentElement.parentElement.getAttribute('id')
+  const handleChange = (id, newAmount) => {
+    const newSelectedProducts = selectedProducts.map((product) =>
+      product.id !== id ? product : { ...product, amount: newAmount }
     );
-    const newSelectedProducts = selectedProducts.map((product) => {
-      if (product.id !== id) {
-        return product;
-      }
-      return {
-        ...product,
-        amount: Number(e.target.value),
-      };
-    });
-    setSelectedProducts(() => newSelectedProducts);
+    setSelectedProducts(newSelectedProducts);
   };
 
-  const handleClickRemove = (e) => {
-    const id = Number(e.target.parentElement.parentElement.getAttribute('id'));
+  const handleClickRemove = (id) => {
     const newSelectedProducts = selectedProducts.filter(
       (product) => product.id !== id
     );
-    setSelectedProducts(() => newSelectedProducts);
+    setSelectedProducts(newSelectedProducts);
   };
 
   if (selectedProducts.length === 0) {
@@ -63,7 +53,11 @@ function ShoppingCart({ selectedProducts, setSelectedProducts }) {
             return (
               <div key={product.id} id={product.id} className="item">
                 <div>
-                  <img style={{ maxWidth: '150px' }} src={product.image} />
+                  <img
+                    style={{ maxWidth: '150px' }}
+                    src={product.image}
+                    alt={product.title}
+                  />
                 </div>
                 <div style={{ maxWidth: '400px' }}>
                   <h3>{product.title}</h3>
@@ -73,12 +67,17 @@ function ShoppingCart({ selectedProducts, setSelectedProducts }) {
                       type="number"
                       name="amount"
                       id="amount"
-                      defaultValue={product.amount}
-                      onChange={handleChange}
+                      value={product.amount}
+                      onChange={(e) =>
+                        handleChange(product.id, parseInt(e.target.value))
+                      }
                     />
                   </div>
                   <div>Price: {product.amount * product.price} €</div>
-                  <button className="red-button" onClick={handleClickRemove}>
+                  <button
+                    className="red-button"
+                    onClick={() => handleClickRemove(product.id)}
+                  >
                     Remove
                   </button>
                 </div>
