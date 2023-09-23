@@ -2,13 +2,15 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../buttons.css';
 import './ProductPage.css';
+import { useRef } from 'react';
 
 function ProductPage({ products, selectedProducts, setSelectedProducts }) {
+  const amountRef = useRef(null);
   const { id } = useParams();
   const product = products.find((product) => product.id == Number(id));
 
   const handleClick = () => {
-    const amount = Number(document.getElementById('amount').value);
+    const amount = amountRef.current.value;
     if (amount === 0) {
       return;
     }
@@ -17,7 +19,6 @@ function ProductPage({ products, selectedProducts, setSelectedProducts }) {
     );
     newSelectedProducts.push({ ...product, amount: amount });
     setSelectedProducts(() => newSelectedProducts);
-    console.log(selectedProducts);
   };
 
   return (
@@ -36,6 +37,7 @@ function ProductPage({ products, selectedProducts, setSelectedProducts }) {
             name="amount"
             id="amount"
             data-testid="amount-input"
+            ref={amountRef}
           />
         </div>
         <button className="green-button" type="Button" onClick={handleClick}>
